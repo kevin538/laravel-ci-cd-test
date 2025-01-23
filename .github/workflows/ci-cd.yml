@@ -1,0 +1,50 @@
+name: Laravel CI/CD Pipeline
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up PHP
+      uses: shivammathur/setup-php@v2
+      with:
+        php-version: '7.4'
+
+    - name: Install Composer dependencies
+      run: |
+        curl -sS https://getcomposer.org/installer | php
+        php composer.phar install --no-interaction --prefer-dist
+
+    - name: Set up environment variables
+      run: |
+        echo "APP_ENV=testing" >> .env
+
+    - name: Run tests
+      run: |
+        ./vendor/bin/phpunit --configuration phpunit.xml
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build
+    if: success()
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Deploy to production
+      run: |
+        echo "Deploying application"
+        # Ajoutez ici vos commandes de déploiement (par exemple via SSH, FTP, ou un autre outil)
+
