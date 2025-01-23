@@ -1,0 +1,24 @@
+create
+report1s.blade.php
+report.blade.php
+report1.blade
+pdf controller 
+admin layout
+app/Exceptions/Handler.php
+<option value="NaN">NaN</option>
+
+        /*  $allPass = collect($safety)
+        ->concat($steritlity)
+        ->concat($potency)
+        ->concat($identity)
+        ->concat($safety)
+        ->every(function ($value) {
+        return $value === 'Pass';
+        }); */
+
+        //les deux premiers pour s'assurer de les
+        /*  $first = collect($safety)
+        ->concat($steritlity)
+        ->every(function ($value) {
+        return $value === 'Pass';
+        }); */

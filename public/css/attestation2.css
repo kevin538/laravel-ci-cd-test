@@ -1,0 +1,66 @@
+.body {
+    text-align: center;
+}
+
+.caption-header {
+    display: flex;
+    justify-content: space-between;
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 0.8rem;
+}
+
+.caption-footer {
+    text-align: left;
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 2rem;
+    font-size: 0.8rem;
+}
+
+table {
+    margin-left: auto;
+    margin-right: auto;
+    width: 95%;
+    margin-top: 0.3rem;
+    font-size: 0.8rem;
+}
+
+@media print {
+    table {
+        margin-left: auto;
+        margin-right: auto;
+        width: 95%;
+        margin-top: 0.3rem;
+        font-size: 0.75rem;
+    }
+}
+
+table,
+td,
+th {
+    border: 1px solid #595959;
+    border-collapse: collapse;
+    font-weight: 500;
+}
+
+td,
+th {
+    padding: 2px;
+    width: 30px;
+    height: 20px;
+}
+
+tr:nth-of-type(4) th {
+    background: silver;
+}
+
+.even {
+    background: #fbf8f0;
+}
+
+.odd {
+    background: #fefcf9;
+}

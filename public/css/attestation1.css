@@ -1,0 +1,16 @@
+.body {
+    text-align: center;
+}
+
+.body .certif-number {
+    text-align: right;
+    display: block;
+}
+
+.body p {
+    font-size: 2rem;
+    margin-top: 0.2rem;
+    margin-bottom: 0.2rem;
+    text-align: left;
+    line-height: 2.8rem;
+}
