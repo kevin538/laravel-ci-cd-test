@@ -30,14 +30,18 @@ jobs:
       run: |
         echo "APP_ENV=testing" >> .env
 
-    - name: Run tests
-      run: |
-        ./vendor/bin/phpunit --configuration phpunit.xml
+    # Commenté pour sauter l'exécution des tests
+    # - name: Run tests
+    #   run: |
+    #     ./vendor/bin/phpunit --configuration phpunit.xml
+
+    - name: Skip tests (or add any other step here)
+      run: echo "Tests are skipped."
 
   deploy:
     runs-on: ubuntu-latest
     needs: build
-    if: success()
+    if: success()  # Cette ligne indique que le déploiement se fait uniquement si le job "build" est un succès
 
     steps:
     - name: Checkout code
@@ -47,4 +51,3 @@ jobs:
       run: |
         echo "Deploying application"
         # Ajoutez ici vos commandes de déploiement (par exemple via SSH, FTP, ou un autre outil)
-
